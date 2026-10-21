@@ -1,0 +1,17 @@
+
+name: Keep Scheduled Workflows Alive
+
+permissions:
+  actions: write
+
+on:
+  schedule:
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Keep scheduled workflows active
+        uses: WaterLemons2k/scheduled-workflow-activity-action@v2
